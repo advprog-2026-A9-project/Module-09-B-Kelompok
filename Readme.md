@@ -128,7 +128,11 @@ Class diagram ini mengilustrasikan injeksi dependensi dalam fitur kuis. `QuizSer
 <details>
 <Summary><b>Liga</b></Summary>
 
+# Code diagram
+![alt text](Diagrams/Individual/Liga/code_diagram.png)
 
+# Component diagram
+![alt text](Diagrams/Individual/Liga/component_diagram.png)
 
 </details>
 
