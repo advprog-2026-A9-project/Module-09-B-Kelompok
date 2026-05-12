@@ -135,19 +135,6 @@ Class diagram ini mengilustrasikan injeksi dependensi dalam fitur kuis. `QuizSer
 <details>
 <Summary><b>Diskusi</b></Summary>
 
-**Izzudin Abdul Rasyid (2406495786)**
-
-**1. Component Diagram (Discussion Module)**
-Diagram ini memvisualisasikan interaksi antara *container* frontend (React) dan backend (Spring Boot) khusus untuk fitur forum diskusi. Komponen UI pada frontend memicu pemanggilan REST API yang ditangani oleh `DiscussionController` di backend, yang kemudian menjalankan logika bisnis melalui service untuk mengelola data komentar dan reaksi pada database Neon PostgreSQL.
-![Component Diagram Diskusi](Diagrams/Individual/Discussion/component-diagram.png)
-
-**2. Code Diagram (Backend Discussion Service)**
-Class diagram ini membedah struktur kode pada paket `discussion` di backend Yomu. Menunjukkan bagaimana `DiscussionController` bergantung pada abstraksi `DiscussionService`, serta implementasi `DiscussionServiceImpl` yang mengelola siklus hidup entitas `Comment` dan `CommentReaction` menggunakan repositori JPA.
-![Code Diagram Backend Diskusi](Diagrams/Individual/Discussion/code-diagram-be.png)
-
-**3. Code Diagram (Frontend Discussion Component) - BONUS**
-Sebagai bagian dari pengembangan frontend, diagram ini merepresentasikan arsitektur komponen React untuk modul diskusi. Komponen `DiscussionSection` mengatur *state* internal untuk daftar komentar dan input pengguna, serta berinteraksi dengan `DiscussionAPI` untuk sinkronisasi data asinkron ke server.
-![Code Diagram Frontend Diskusi](Diagrams/Individual/Discussion/code-diagram-fe.png)
 
 
 </details>
