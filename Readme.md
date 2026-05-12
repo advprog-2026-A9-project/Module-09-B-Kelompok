@@ -97,7 +97,23 @@ mengusulkan:
 
 <details>
 <Summary><b>Bacaan dan Kuis</b></Summary>
+### Ryan Gibran Purwacakra Sihaloho (2406419833)
 
+**1. Component Diagram (Manajemen Teks Bacaan)**
+Diagram ini memperlihatkan alur pengelolaan teks bacaan di dalam komponen backend. Permintaan HTTP dari Frontend akan diverifikasi oleh `SecurityInterceptor` sebelum diproses oleh `ReadingController`. Logika bisnis dieksekusi di `ReadingServiceImpl`, yang berinteraksi dengan Neon DB melalui `ReadingRepository`.
+![Component Diagram Bacaan](Diagrams/Individual/Bacaan%20dan%20Kuis/Component_Diagram.png)
+
+**2. Code Diagram (Manajemen Teks Bacaan)**
+Class diagram ini membedah komponen di atas ke level kode. `ReadingController` menerima representasi data berupa `ReadingTextDto`, memanggil `ReadingServiceImpl` untuk mengeksekusi logika bisnis, mengonversi DTO menjadi wujud entitas `ReadingText`, lalu menggunakan antarmuka `ReadingRepository` untuk operasi database.
+![Code Diagram Bacaan](Diagrams/Individual/Bacaan%20dan%20Kuis/Code_Diagram.png)
+
+**3. Component Diagram (Sistem Kuis & Event Broadcasting) - BONUS**
+Diagram ini berfokus pada alur pengerjaan kuis dan implementasi *Event-Driven Architecture*. Setelah Pelajar men-submit jawaban, `QuizServiceImpl` akan menghitung skor dan menyimpannya ke database. Yang paling krusial, *Service* kemudian memanggil `QuizEventPublisher` untuk mengirimkan *event* ke RabbitMQ. Sinyal ini nantinya akan ditangkap secara *asynchronous* oleh Modul Achievements dan Modul Liga tanpa adanya *direct coupling*.
+![Component Diagram Kuis](Diagrams/Individual/Bacaan%20dan%20Kuis/Component_Diagram_Kuis.png)
+
+**4. Code Diagram (Sistem Kuis & Event Broadcasting) - BONUS**
+Class diagram ini mengilustrasikan injeksi dependensi dalam fitur kuis. `QuizServiceImpl` tidak hanya bergantung pada `QuizRepository`, tetapi juga pada `QuizEventPublisher`. Saat kuis selesai diproses, sistem membentuk objek `QuizFinishedEventMessage` yang berisi *userId*, *score*, dan *accuracy*, lalu dipublikasikan melalui antarmuka *message broker*.
+![Code Diagram Kuis](Diagrams/Individual/Bacaan%20dan%20Kuis/Code_Diagram_Kuis.png)
 
 
 </details>
