@@ -74,23 +74,28 @@ mengusulkan:
 
 <details>
 <Summary><b>Auth</b></Summary>
-
+Muhammad Rafi Sugianto / 2406357135
 
 ## Auth Component Diagram
+Diagram ini merepresentasikan arsitektur keseluruhan modul autentikasi pada backend aplikasi. Diagram menunjukkan hubungan antar komponen seperti controller, service, repository, model, DTO, filter, event, dan configuration dalam menangani proses autentikasi, otorisasi JWT, pengelolaan akun pengguna, serta integrasi keamanan sistem.
 ![Auth Component Diagram](Diagrams/Individual/Auth/_Component%20Diagram%20-%20Modul%20Auth.drawio.png)
 
 ## Code Diagram
 
 ### User Class Diagram
+Diagram ini merepresentasikan entitas pengguna pada sistem. Class User menyimpan informasi akun seperti username, email, password, dan role, serta menyediakan method getter dan setter untuk mengakses dan mengelola data pengguna.
 ![User Class Diagram](Diagrams/Individual/Auth/User%20Class%20Diagram.drawio.png)
 
 ### AuthController Class Diagram
+Diagram ini merepresentasikan controller REST API untuk autentikasi dan manajemen akun pengguna. Class AuthController menerima request dari client dan meneruskannya ke AuthService untuk diproses, seperti login, registrasi, update akun, dan penghapusan akun.
 ![AuthController Class Diagram](Diagrams/Individual/Auth/AuthController%20Class%20Diagram.drawio.png)
 
 ### AuthServiceImpl Class Diagram
+Diagram ini merepresentasikan implementasi service autentikasi pada backend. Class AuthServiceImpl menangani proses bisnis seperti registrasi, login, pengelolaan akun, serta integrasi dengan JWT dan database pengguna melalui UserRepository.
 ![AuthServiceImpl Class Diagram](Diagrams/Individual/Auth/AuthServiceImpl%20Class%20Diagram.drawio.png)
 
 ### JWTUtil Class Diagram
+Diagram ini merepresentasikan utility class untuk pengelolaan JWT (JSON Web Token). Class JWTUtil bertanggung jawab dalam pembuatan token, validasi token, serta ekstraksi data pengguna seperti userId, username, dan role dari token untuk mendukung sistem autentikasi berbasis JWT.
 ![JWTUtil Class Diagram](Diagrams/Individual/Auth/JWTUtil%20Class%20Diagram.drawio.png)
 
 </details>
